@@ -1,3 +1,239 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    pt-BR e a lingua base do projeto (ver CLAUDE.md). O corretor do lint so
+    conhece ingles nesta pasta e acusa palavras validas em portugues, entao a
+    checagem de grafia fica desligada aqui.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:locale="pt-BR"
+    tools:ignore="Typos">
+
+    <!-- ============ Identidade pública ============ -->
     <string name="app_name">Calculadora</string>
+
+    <!-- ============ Ações comuns ============ -->
+    <string name="action_back">Voltar</string>
+    <string name="action_next">Continuar</string>
+    <string name="action_finish">Concluir</string>
+    <string name="action_save">Salvar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_quick_exit">Sair</string>
+
+    <string name="dev_mode_strip">Modo de desenvolvimento: nada sai do aparelho.</string>
+
+    <!-- ============ Calculadora (fachada) ============ -->
+    <string name="calc_clear_entry">C</string>
+    <string name="calc_clear_all">AC</string>
+    <string name="calc_percent">%</string>
+    <string name="calc_sign">+/−</string>
+    <string name="calc_divide">÷</string>
+    <string name="calc_multiply">×</string>
+    <string name="calc_subtract">−</string>
+    <string name="calc_add">+</string>
+    <string name="calc_equals">=</string>
+    <string name="calc_decimal">,</string>
+    <string name="calc_backspace">Apagar</string>
+    <string name="calc_error_divide_by_zero">Não é possível dividir por zero</string>
+    <string name="calc_history_title">Histórico</string>
+    <string name="calc_history_open">Abrir histórico</string>
+    <string name="calc_history_empty">Nenhuma conta ainda.</string>
+    <string name="calc_history_clear">Limpar histórico</string>
+    <string name="calc_key_description">Tecla %1$s</string>
+    <string name="calc_zero_key_description">Tecla zero</string>
+
+    <!-- ============ Onboarding ============ -->
+    <string name="onb_step_counter">Passo %1$d de %2$d</string>
+
+
+    <string name="onb_access_title">Crie seu código de acesso</string>
+    <string name="onb_access_subtitle">Digite este código na calculadora e toque em = para abrir o cofre.</string>
+    <string name="onb_access_confirm_title">Repita o código de acesso</string>
+    <string name="onb_pin_hint_length">De 4 a 8 dígitos</string>
+
+    <string name="onb_duress_title">Crie um código de coação</string>
+    <string name="onb_duress_subtitle">Se alguém obrigar você a abrir o app, use este segundo código. Ele abre um cofre que parece real, com contatos genéricos e nenhuma gravação.</string>
+    <string name="onb_duress_confirm_title">Repita o código de coação</string>
+
+    <string name="onb_pin_error_short">Use de 4 a 8 dígitos.</string>
+    <string name="onb_pin_error_obvious">Evite sequências como 1234 ou 0000 — são as primeiras que alguém tenta.</string>
+    <string name="onb_pin_error_mismatch">Os códigos não são iguais.</string>
+    <string name="onb_pin_error_same_as_access">O código de coação precisa ser diferente do código de acesso.</string>
+
+    <string name="onb_contacts_title">Quem você quer avisar</string>
+    <string name="onb_contacts_empty">Você pode adicionar contatos depois, dentro do cofre.</string>
+
+    <string name="onb_permissions_title">Permissões</string>
+    <string name="onb_permissions_subtitle">O app pede o mínimo necessário. Você pode recusar agora e liberar depois.</string>
+    <string name="onb_permission_audio">Microfone — para gravar áudio no modo de emergência.</string>
+    <string name="onb_permission_location">Localização — para registrar onde você estava.</string>
+    <string name="onb_permission_notifications">Notificações — para mostrar o estado da gravação.</string>
+    <string name="onb_permission_granted">Concedida</string>
+    <string name="onb_permission_denied">Não concedida</string>
+    <string name="onb_permissions_request">Pedir permissões</string>
+    <string name="onb_honesty_title">O que você vai ver na tela</string>
+    <string name="onb_honesty_body">A partir do Android 14, toda gravação em segundo plano mostra uma notificação e um ponto na barra de status. Não há como esconder isso, e nós não vamos fingir que há. Quem estiver olhando o aparelho pode ver esse aviso.</string>
+    <string name="onb_visibility_title">O app não fica invisível</string>
+    <string name="onb_visibility_body">O ícone continua na gaveta de apps e o app continua aparecendo em Ajustes. A proteção é o disfarce: por fora, é uma calculadora comum.</string>
+
+    <string name="onb_done_title">Tudo pronto</string>
+    <string name="onb_done_body">Faça um ensaio antes de precisar. Dentro do cofre, use o Teste seguro para ver exatamente o que aconteceria.</string>
+
+    <!-- ============ Cofre ============ -->
+    <string name="vault_home_title">Início</string>
+    <string name="vault_panic_button">Emergência</string>
+    <string name="vault_panic_hint">Segure para acionar</string>
+    <string name="vault_panic_short_tap">Segure o botão por 1 segundo para acionar.</string>
+    <string name="vault_panic_description">Botão de emergência. Mantenha pressionado para acionar.</string>
+    <string name="vault_section_shortcuts">Atalhos</string>
+    <string name="vault_section_status">Estado atual</string>
+    <string name="vault_contacts">Contatos</string>
+    <string name="vault_contacts_subtitle">Quem é avisado e com qual mensagem</string>
+    <string name="vault_triggers">Gatilhos</string>
+    <string name="vault_triggers_subtitle">Como acionar a emergência</string>
+    <string name="vault_evidence">Gravações</string>
+    <string name="vault_evidence_subtitle">O que ficou guardado no aparelho</string>
+    <string name="vault_safe_test">Teste seguro</string>
+    <string name="vault_safe_test_subtitle">Ensaie o fluxo completo sem consequência</string>
+    <string name="vault_status_no_contacts">Nenhum contato cadastrado</string>
+    <string name="vault_status_code">Código na calculadora: %1$s</string>
+    <string name="vault_status_code_off">Código na calculadora: desligado</string>
+    <string name="vault_last_run_title">Último acionamento</string>
+    <string name="vault_last_run_rehearsal">Este registro veio do Teste seguro.</string>
+    <string name="vault_last_run_none">Nenhum acionamento até agora.</string>
+    <string name="vault_duress_notice">Este é o cofre de coação. O que você fizer aqui não altera o cofre real e desaparece ao sair.</string>
+    <string name="vault_no_contacts_warning">Sem contatos cadastrados, o acionamento grava e registra, mas não tem ninguém para avisar.</string>
+
+    <!-- ============ Contatos ============ -->
+    <string name="contacts_title">Contatos de confiança</string>
+    <string name="contacts_empty_title">Nenhum contato ainda</string>
+    <string name="contacts_empty_body">Adicione quem você quer que seja avisado em uma emergência.</string>
+    <string name="contacts_add">Adicionar contato</string>
+    <string name="contacts_primary">Principal</string>
+    <string name="contacts_set_primary">Tornar principal</string>
+    <string name="contacts_field_name">Nome</string>
+    <string name="contacts_field_phone">Telefone</string>
+    <string name="contacts_field_relationship">Relação</string>
+    <string name="contacts_error_name">Informe um nome.</string>
+    <string name="contacts_error_phone">Informe um telefone.</string>
+    <string name="contacts_delete_title">Excluir contato</string>
+    <string name="contacts_delete_body">%1$s deixa de ser avisado em uma emergência.</string>
+    <string name="contacts_message_title">Mensagem do alerta</string>
+    <string name="contacts_message_help">Use {nome} para o nome do contato e {local} para a localização.</string>
+    <string name="contacts_message_preview">Prévia: %1$s</string>
+    <string name="contacts_phone_notice">O telefone fica guardado neste aparelho. Nesta fase o app não liga nem envia mensagens.</string>
+
+    <!-- ============ Gatilhos ============ -->
+    <string name="triggers_title">Gatilhos</string>
+    <string name="trigger_calculator_code">Código na calculadora</string>
+    <string name="trigger_calculator_code_desc">Digitar o código e tocar em = aciona a emergência sem abrir o cofre.</string>
+    <string name="trigger_long_press">Toque longo no zero</string>
+    <string name="trigger_long_press_desc">Segurar a tecla 0 por 3 segundos aciona a emergência.</string>
+    <string name="trigger_tile">Atalho nos Ajustes rápidos</string>
+    <string name="trigger_tile_desc">Funciona com a tela bloqueada. Ainda não implementado.</string>
+    <string name="trigger_power">Botão de energia 5 vezes</string>
+    <string name="trigger_power_desc">Depende de um serviço em primeiro plano. Ainda não implementado.</string>
+    <string name="trigger_volume">Botões de volume</string>
+    <string name="trigger_volume_desc">Só funciona com o app aberto. Ainda não implementado.</string>
+    <string name="trigger_shake">Chacoalhar o aparelho</string>
+    <string name="trigger_shake_desc">Desligado por padrão: falso positivo aqui custa caro. Ainda não implementado.</string>
+    <string name="trigger_unavailable">Fase posterior</string>
+    <string name="trigger_sensitivity">Sensibilidade: %1$d%%</string>
+    <string name="triggers_code_title">Código de emergência</string>
+    <string name="triggers_code_help">Digite este código na calculadora e toque em = para acionar sem abrir o cofre.</string>
+    <string name="triggers_code_error_short">Use de 3 a 8 dígitos.</string>
+    <string name="triggers_code_error_conflict">Este código já é um dos seus códigos de acesso.</string>
+    <string name="triggers_countdown_title">Tempo para cancelar</string>
+    <string name="triggers_countdown_help">Depois de acionar, você tem esse tempo para cancelar com um toque longo antes de qualquer coisa acontecer.</string>
+    <string name="triggers_countdown_immediate">Sem espera</string>
+    <string name="triggers_disguise_title">Aparência durante a emergência</string>
+    <string name="triggers_disguise_calculator">Calculadora normal</string>
+    <string name="triggers_disguise_black">Tela preta</string>
+    <string name="triggers_disguise_battery">Bateria fraca</string>
+    <string name="triggers_duress_alert_title">Código de coação também alerta</string>
+    <string name="triggers_phase_notice">Os gatilhos marcados como fase posterior aparecem aqui de propósito: você precisa saber o que ainda não funciona antes de contar com eles.</string>
+    <string name="triggers_duress_alert_desc">Ao abrir o cofre de coação, dispara o alerta em silêncio. Deixe desligado se você tem receio de acionar por engano.</string>
+
+    <!-- ============ Evidências ============ -->
+    <string name="evidence_title">Gravações</string>
+    <string name="evidence_empty_title">Nada guardado</string>
+    <string name="evidence_empty_body">As gravações feitas durante um acionamento aparecem aqui.</string>
+    <string name="evidence_kind_audio">Áudio</string>
+    <string name="evidence_kind_video">Vídeo</string>
+    <string name="evidence_kind_location">Localização</string>
+    <string name="evidence_duration">%1$s de duração</string>
+    <string name="evidence_placeholder">Registro simulado — nenhum arquivo foi gravado nesta fase.</string>
+    <string name="evidence_play">Reproduzir</string>
+    <string name="evidence_stop">Parar</string>
+    <string name="evidence_delete_title">Excluir gravação</string>
+    <string name="evidence_delete_body">Depois de excluir não dá para recuperar.</string>
+    <string name="evidence_delete_all">Excluir tudo</string>
+
+    <!-- ============ Teste seguro ============ -->
+    <string name="safe_test_title">Teste seguro</string>
+    <string name="safe_test_intro">Este ensaio percorre o fluxo inteiro e mostra exatamente o que aconteceria. Nada é enviado, nada é gravado e nada fica no histórico.</string>
+    <string name="safe_test_run">Começar o ensaio</string>
+    <string name="safe_test_running">Ensaiando…</string>
+    <string name="safe_test_again">Ensaiar de novo</string>
+    <string name="safe_test_result_title">O que aconteceria</string>
+    <string name="safe_test_no_contacts">Nenhum contato cadastrado: não haveria ninguém para avisar.</string>
+    <string name="safe_test_preview_title">Ver as aparências da emergência</string>
+    <string name="safe_test_preview_body">Reconheça a tela antes de precisar dela. Toque para visualizar; um toque longo de 3 segundos fecha a prévia, igual ao cancelamento real.</string>
+    <string name="safe_test_preview_open">Ver %1$s</string>
+    <string name="safe_test_step_trigger">Acionamento por %1$s</string>
+    <string name="safe_test_step_countdown">Espera de %1$d s para cancelar</string>
+    <string name="safe_test_step_disguise">Tela assume: %1$s</string>
+    <string name="safe_test_step_recording">Gravação de áudio começaria aqui</string>
+    <string name="safe_test_step_location">Localização registrada: %1$s</string>
+    <string name="safe_test_step_alert">Mensagem para %1$s</string>
+    <string name="safe_test_step_done">Ensaio concluído. Nada saiu do aparelho.</string>
+
+    <!-- ============ Emergência ============ -->
+    <string name="panic_source_manual">botão no cofre</string>
+    <string name="panic_source_code">código na calculadora</string>
+    <string name="panic_source_long_press">toque longo no zero</string>
+    <string name="panic_source_duress">código de coação</string>
+    <string name="panic_source_safe_test">ensaio</string>
+    <string name="panic_low_battery_title">Bateria fraca</string>
+    <string name="panic_low_battery_body">Restam 2% de bateria. Conecte o carregador.</string>
+    <string name="panic_low_battery_dismiss">OK</string>
+    <string name="panic_cancelled">Acionamento cancelado.</string>
+
+    <!-- ============ Ajustes do cofre ============ -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_reset_title">Apagar tudo e recomeçar</string>
+    <string name="settings_reset_body">Remove códigos, contatos, gatilhos e gravações deste aparelho.</string>
+    <string name="settings_reset_confirm">Apagar tudo</string>
+
+    <!-- ============ Primeira execução ============ -->
+    <string name="bootstrap_hint_title">Configuração inicial</string>
+    <string name="bootstrap_hint_body">Para configurar, digite %1$s na calculadora e toque em =. Depois disso, este aviso não aparece mais.</string>
+
+    <!-- ============ Contagens ============ -->
+    <plurals name="onb_pin_dots_description">
+        <item quantity="one">Código com %1$d dígito digitado</item>
+        <item quantity="other">Código com %1$d dígitos digitados</item>
+    </plurals>
+    <plurals name="onb_contacts_subtitle">
+        <item quantity="one">Escolha 1 pessoa de confiança. Os dados ficam só neste aparelho.</item>
+        <item quantity="other">Escolha até %1$d pessoas de confiança. Os dados ficam só neste aparelho.</item>
+    </plurals>
+    <plurals name="vault_status_contacts">
+        <item quantity="one">%1$d contato cadastrado</item>
+        <item quantity="other">%1$d contatos cadastrados</item>
+    </plurals>
+    <plurals name="vault_status_triggers">
+        <item quantity="one">%1$d gatilho ativo</item>
+        <item quantity="other">%1$d gatilhos ativos</item>
+    </plurals>
+    <plurals name="contacts_limit">
+        <item quantity="one">Você pode cadastrar 1 contato.</item>
+        <item quantity="other">Você pode cadastrar até %1$d contatos.</item>
+    </plurals>
+    <plurals name="triggers_countdown_value">
+        <item quantity="one">%1$d segundo</item>
+        <item quantity="other">%1$d segundos</item>
+    </plurals>
+
 </resources>

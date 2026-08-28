@@ -2,8 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--
+        Regras invioláveis desta fase (ver CLAUDE.md):
+        NÃO declarar CALL_PHONE, SEND_SMS, READ_SMS nem PROCESS_OUTGOING_CALLS.
+        Se alguma delas aparecer aqui, é bug — remova.
+    -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--
+        Trava de fase no próprio manifesto: se qualquer biblioteca trouxer
+        INTERNET por merge, ela é removida e o app fica sem como sair do
+        aparelho, mesmo que alguém esqueça a checagem no código.
+    -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="remove" />
+
     <application
-        android:allowBackup="true"
+        android:name=".CalcApplication"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -11,15 +32,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculadora">
+
+        <!--
+            excludeFromRecents mantém o app fora da lista de recentes; o cofre
+            ainda usa FLAG_SECURE por tela para bloquear captura e miniatura.
+        -->
         <activity
             android:name=".MainActivity"
+            android:excludeFromRecents="true"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Calculadora"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
