@@ -45,7 +45,6 @@ fun CalcApp(panicViewModel: AppPanicViewModel = hiltViewModel()) {
             navController.quickExit()
         }
     }
-
     Box(modifier = Modifier.fillMaxSize()) {
         CalcTheme(skin = skin) {
             Surface(modifier = Modifier.fillMaxSize()) {
