@@ -18,12 +18,16 @@ A proteção só funciona se for invisível.
 
 Você abre o app e vê uma calculadora. Não uma tela que parece uma calculadora: uma calculadora de verdade, que soma, divide, calcula porcentagem e guarda histórico. Dá para usar no supermercado. Dá para emprestar para alguém.
 
+![Tela da calculadora, com o aviso de configuração inicial](images/1.png)
+
 Só que existe uma conta que ela não faz. Quando um código específico é digitado e a tecla `=` é pressionada, acontece uma de duas coisas:
 
 - **Abre o cofre**, com contatos de confiança, gatilhos, gravações e ajustes.
 - **Dispara a emergência em silêncio**, sem nada piscar ou vibrar. A tela continua sendo uma calculadora enquanto o aparelho registra a localização, grava e prepara o aviso.
 
 Para quem estiver olhando por cima do ombro, foi só mais uma conta.
+
+![Tela inicial do cofre, com o botão de emergência, o estado atual e os atalhos](images/2.png)
 
 ## O código de coação
 
